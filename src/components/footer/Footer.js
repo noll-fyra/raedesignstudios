@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Footer = () => (
-  <div style={style.footerContainer}>
+  <div style={style.footer}>
     <div style={style.infoContainer}>
       <div style={style.infoDiv}>
         <div style={style.infoHeader}>LOCATION</div>
@@ -39,7 +39,7 @@ const Footer = () => (
 )
 
 const style = {
-  footerContainer: {
+  footer: {
     padding: '5vw',
     width: '100%'
   },

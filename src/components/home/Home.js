@@ -1,26 +1,26 @@
 import React, { Component } from 'react'
-import Card from '../card/Card'
-
-const imageArray = [
-  'https://images.unsplash.com/photo-1490818387583-1baba5e638af?dpr=1&auto=format&fit=crop&w=1500&h=1190&q=80&cs=tinysrgb&crop=',
-  'https://images.unsplash.com/photo-1490818387583-1baba5e638af?dpr=1&auto=format&fit=crop&w=1500&h=1190&q=80&cs=tinysrgb&crop=',
-  'https://images.unsplash.com/photo-1490818387583-1baba5e638af?dpr=1&auto=format&fit=crop&w=1500&h=1190&q=80&cs=tinysrgb&crop=',
-  'https://images.unsplash.com/photo-1490818387583-1baba5e638af?dpr=1&auto=format&fit=crop&w=1500&h=1190&q=80&cs=tinysrgb&crop=',
-  'https://images.unsplash.com/photo-1490818387583-1baba5e638af?dpr=1&auto=format&fit=crop&w=1500&h=1190&q=80&cs=tinysrgb&crop=',
-  'https://images.unsplash.com/photo-1490818387583-1baba5e638af?dpr=1&auto=format&fit=crop&w=1500&h=1190&q=80&cs=tinysrgb&crop='
-]
+import { Link } from 'react-router-dom'
+import Header from '../header/Header'
 
 class Home extends Component {
+  componentDidMount () {
+    this.props.handleHomeActive(true)
+  }
+
+  componentWillUnmount () {
+    this.props.handleHomeActive(false)
+  }
 
   render () {
-    const cards = imageArray.map((image, index) => {
-      return <li key={index} style={style.cardItem}><Card image={image} /></li>
-    })
     return (
       <div style={style.home}>
-        <ul style={style.cardList}>
-          {cards}
-        </ul>
+        <div style={style.hero}>
+          <Header />
+          <div style={style.heroCopy}>
+            We even interior design the exterior
+            <div style={style.seeOurWork}><Link to='/work'>See our work >>></Link></div>
+          </div>
+        </div>
       </div>
     )
   }
@@ -28,19 +28,30 @@ class Home extends Component {
 
 const style = {
   home: {
-    padding: '24px',
-    display: 'flex',
-    alignItems: 'center'
+    position: 'relative'
   },
-  cardItem: {
-    margin: '12px'
+  hero: {
+    width: '100vw',
+    height: '100vh',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1430651717504-ebb9e3e6795e?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=)',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover'
   },
-  cardList: {
+  heroCopy: {
+    position: 'absolute',
+    top: '40vh',
+    width: '100%',
     display: 'flex',
-    flexFlow: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center'
+    flexFlow:'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '3em'
+  },
+  seeOurWork:{
+    padding: '8px',
+    border: '2px solid black',
+    fontSize: '0.5em'
   }
 }
-
 export default Home

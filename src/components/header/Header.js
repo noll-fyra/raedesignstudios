@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-// import PropTypes from 'prop-types';
 
 const Header = () => (
   <div style={style.header}>
@@ -9,9 +8,9 @@ const Header = () => (
     </div>
     <div>
       <ul style={style.navList}>
-        <li style={style.navLink}><NavLink exact to='/' activeStyle={style.activeLink}>Work</NavLink></li>
+        <li style={style.navLink}><NavLink to='/work' activeStyle={style.activeLink}>Work</NavLink></li>
         <li style={style.navLink}><NavLink to='/about' activeStyle={style.activeLink}>About</NavLink></li>
-        <li style={style.navLink}><NavLink to='/signin' activeStyle={style.activeLink}>Sign In</NavLink></li>
+        <li style={style.navLink}><NavLink to='/signin' activeStyle={style.activeLink}><div style={style.signIn}>Sign In</div></NavLink></li>
       </ul>
     </div>
   </div>
@@ -29,17 +28,19 @@ const style = {
   },
   navList: {
     display: 'flex',
-    flexFlow: 'row'
+    flexFlow: 'row',
+    alignItems: 'center'
   },
   navLink: {
     marginLeft: '12px'
   },
   activeLink: {
     color: 'red'
+  },
+  signIn: {
+    padding: '8px',
+    border: '2px solid black'
   }
 }
-// Header.propTypes = {
-//   : PropTypes.
-// };
 
 export default Header

@@ -14,8 +14,8 @@ const Card = ({image}) => (
 const style = {
   card: {
     position: 'relative',
-    width: '38vw',
-    height: '20vw'
+    width: '44vw',
+    height: '23vw'
   },
   cardText: {
     width: '100%',
