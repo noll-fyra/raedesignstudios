@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Card from '../card/Card'
 
 const imageArray = [
@@ -14,7 +15,11 @@ class Work extends Component {
 
   render () {
     const cards = imageArray.map((image, index) => {
-      return <li key={index} style={style.cardItem}><Card image={image} /></li>
+      return <li key={index} style={style.cardItem}>
+        <Link to={`/work/${image}`}>
+          <Card image={image} />
+        </Link>
+      </li>
     })
     return (
       <div style={style.work}>

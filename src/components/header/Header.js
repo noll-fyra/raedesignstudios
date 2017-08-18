@@ -1,7 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link, NavLink } from 'react-router-dom'
+import { auth } from '../../utilities/firebase'
 
-const Header = () => (
+const Header = ({user}) => (
   <div style={style.header}>
     <div style={style.logo}>
       <Link to='/'>RAE Design Studios</Link>
@@ -10,18 +12,34 @@ const Header = () => (
       <ul style={style.navList}>
         <li style={style.navLink}><NavLink to='/work' activeStyle={style.activeLink}>Work</NavLink></li>
         <li style={style.navLink}><NavLink to='/about' activeStyle={style.activeLink}>About</NavLink></li>
-        <li style={style.navLink}><NavLink to='/signin' activeStyle={style.activeLink}><div style={style.signIn}>Sign In</div></NavLink></li>
+        {user &&
+          <li style={style.navLink}><NavLink to='/client' activeStyle={style.activeLink}>Client</NavLink></li>
+        }
+        {user
+          ? <li style={style.navLink}><Link to='/' onClick={() => auth.signOut()}>Sign Out</Link></li>
+          : <li style={style.navLink}><NavLink to='/signin' activeStyle={style.activeLink}><div style={style.signIn}>Sign In</div></NavLink></li>
+        }
       </ul>
     </div>
   </div>
 )
 
+Header.propTypes = {
+  user: PropTypes.object
+}
+
 const style = {
   header: {
+    width: '100vw',
+    height: '80px',
     display: 'flex',
     flexFlow: 'row',
+    alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '2.5vw 5vw'
+    padding: '0 5vw',
+    position: 'fixed',
+    zIndex: 10,
+    top: '0'
   },
   logo: {
     fontSize: '2em'
