@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Card from '../card/Card'
+import WorkCard from './WorkCard'
 
 const imageArray = [
   'https://images.unsplash.com/photo-1490818387583-1baba5e638af?dpr=1&auto=format&fit=crop&w=1500&h=1190&q=80&cs=tinysrgb&crop=',
@@ -17,7 +17,7 @@ class Work extends Component {
     const cards = imageArray.map((image, index) => {
       return <li key={index} style={style.cardItem}>
         <Link to={`/work/${image}`}>
-          <Card image={image} />
+          <WorkCard image={image} />
         </Link>
       </li>
     })

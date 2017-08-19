@@ -7,8 +7,10 @@ import Project from '../work/Project'
 import About from '../about/About'
 import SignIn from '../signin/SignIn'
 import Client from '../client/Client'
+// import Section from '../client/Section'
 import Footer from '../footer/Footer'
 import { auth } from '../../utilities/firebase'
+import constants from '../../constants/constants'
 
 class App extends Component {
   constructor (props) {
@@ -47,7 +49,8 @@ class App extends Component {
           <Route exact path='/work/:name' component={Project} />
           <Route path='/about' component={About} />
           <Route path='/signin' render={() => <SignIn auth={auth} user={this.state.user} handleHideFooter={this.handleHideFooter} />} />
-          <Route path='/client' component={Client} />
+          <Route exact path='/client' component={Client} />
+          {/* <Route path='/client/:name/:id' component={Section} /> */}
           {!this.state.hideFooter && <Footer /> }
         </div>
       </Router>
@@ -57,7 +60,7 @@ class App extends Component {
 
 const style = {
   app: {
-    paddingTop: '80px'
+    paddingTop: constants.headerHeight
   }
 }
 

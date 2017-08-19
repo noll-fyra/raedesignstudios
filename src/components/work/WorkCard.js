@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Card = ({image}) => (
+const WorkCard = ({image}) => (
   <div style={style.card}>
     <div style={style.cardText}>
       <div style={style.cardHeader}>HEADER</div>
@@ -43,8 +43,8 @@ const style = {
   }
 }
 
-Card.propTypes = {
+WorkCard.propTypes = {
   image: PropTypes.string.isRequired
 }
 
-export default Card
+export default WorkCard

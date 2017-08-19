@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, NavLink } from 'react-router-dom'
 import { auth } from '../../utilities/firebase'
+import constants from '../../constants/constants'
 
 const Header = ({user}) => (
   <div style={style.header}>
@@ -31,15 +32,16 @@ Header.propTypes = {
 const style = {
   header: {
     width: '100vw',
-    height: '80px',
+    height: constants.headerHeight,
     display: 'flex',
     flexFlow: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '0 5vw',
+    paddingLeft: constants.paddingLeft,
+    paddingRight: constants.paddingRight,
     position: 'fixed',
     zIndex: 10,
-    top: '0'
+    top: 0
   },
   logo: {
     fontSize: '2em'
@@ -56,7 +58,7 @@ const style = {
     color: 'red'
   },
   signIn: {
-    padding: '8px',
+    padding: constants.paddingBox,
     border: '2px solid black'
   }
 }
