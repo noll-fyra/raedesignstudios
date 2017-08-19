@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Redirect } from 'react-router-dom'
 import { auth } from '../../utilities/firebase'
+import constants from '../../constants/constants'
 
 class SignIn extends Component {
   constructor (props) {
@@ -108,7 +109,8 @@ SignIn.propTypes = {
 
 const style = {
   signinContainer: {
-    padding: '0 5vw'
+    paddingLeft: constants.paddingLeft,
+    paddingRight: constants.paddingRight
   },
   signin: {
     width: '100vw',
@@ -133,7 +135,7 @@ const style = {
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: '1.25em',
-    padding: '4px',
+    padding: constants.paddingBox,
     color: 'lightGrey',
     cursor: 'pointer'
   },
@@ -152,7 +154,7 @@ const style = {
   input: {
     width: '360px',
     fontSize: '1.25em',
-    padding: '8px'
+    padding: constants.paddingBox
   },
   button: {
     color: 'red',
@@ -165,7 +167,7 @@ const style = {
   error: {
     width: '360px',
     color: 'red',
-    padding: '4px',
+    padding: constants.paddingBox,
     fontSize: '1.25em'
   }
 }

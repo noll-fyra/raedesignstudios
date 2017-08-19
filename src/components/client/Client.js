@@ -4,12 +4,12 @@ import Section from './Section'
 import constants from '../../constants/constants'
 
 const sections = [
-  {name: 'master schedule', id: 1},
-  {name: 'gant chart', id: 2},
-  {name: 'floor plans', id: 3},
-  {name: 'photos', id: 4},
-  {name: 'invoices', id: 5},
-  {name: 'boards/inspiration', id: 6}
+  {name: 'master schedule', id: 1, type: 'master schedule'},
+  {name: 'gant chart', id: 2, type: 'gant chart'},
+  {name: 'floor plans', id: 3, type: 'floor plans'},
+  {name: 'photos', id: 4, type: 'photos'},
+  {name: 'invoices', id: 5, type: 'invoices'},
+  {name: 'boards/inspiration', id: 6, type: 'boards/inspiration'}
 ]
 
 class Client extends Component {

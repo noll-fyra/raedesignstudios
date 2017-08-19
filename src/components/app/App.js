@@ -44,6 +44,7 @@ class App extends Component {
       <Router>
         <div style={style.app}>
           <Header user={this.state.user} />
+          {/* <div style={style.headerBackground}/> */}
           <Route exact path='/' render={() => <Home handleHideFooter={this.handleHideFooter} />} />
           <Route exact path='/work' component={Work} />
           <Route exact path='/work/:name' component={Project} />

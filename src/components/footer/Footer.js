@@ -1,8 +1,10 @@
 import React from 'react'
+import constants from '../../constants/constants'
 
 const Footer = () => (
   <div style={style.footer}>
     <div style={style.infoContainer}>
+
       <div style={style.infoDiv}>
         <div style={style.infoHeader}>LOCATION</div>
         <div style={style.infoLine}>
@@ -12,6 +14,7 @@ const Footer = () => (
           <a href='https://goo.gl/maps/sGbpVqzp1F42' style={style.infoLine}>South Yarra VIC 3141</a>
         </div>
       </div>
+
       <div style={style.infoDiv}>
         <div style={style.infoHeader}>CONTACT</div>
         <div style={style.infoLine}>
@@ -20,9 +23,8 @@ const Footer = () => (
         <div style={style.infoLine}>
           <a href='tel:+61431536778' style={style.infoLine}>+61 431 536 778</a>
         </div>
-        <div style={style.infoLine} />
-        <div style={style.infoLine}><i style={style.infoLine}>&copy; 2017 RAE Design Studios</i></div>
       </div>
+
       <div style={style.infoDiv}>
         <div style={style.infoHeader}>FOLLOW</div>
         <div style={style.infoLine} />
@@ -35,17 +37,29 @@ const Footer = () => (
         </div>
       </div>
     </div>
+
+    <div style={style.infoLine} />
+    <div style={style.infoLine}><i style={style.infoLine}>&copy; 2017 RAE Design Studios</i></div>
   </div>
 )
 
 const style = {
   footer: {
-    padding: '5vw',
-    width: '100%'
+    width: '100vw',
+    height: constants.footerHeight,
+    display: 'flex',
+    flexFlow: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingLeft: constants.paddingLeft,
+    paddingRight: constants.paddingRight
   },
   infoContainer: {
     display: 'flex',
     flexFlow: 'row',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     margin: '0 auto'
   },
   infoDiv: {

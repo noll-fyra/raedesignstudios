@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import constants from '../../constants/constants'
 
 class Home extends Component {
   componentDidMount () {
@@ -49,7 +50,8 @@ const style = {
     fontSize: '3em'
   },
   seeOurWork: {
-    padding: '8px',
+    margin: constants.sectionMargin,
+    padding: constants.paddingBox,
     border: '2px solid black',
     fontSize: '0.5em'
   }

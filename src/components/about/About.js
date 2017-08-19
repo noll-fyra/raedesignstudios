@@ -1,4 +1,5 @@
 import React from 'react'
+import constants from '../../constants/constants'
 
 const About = () => (
   <div style={style.about}>
@@ -18,12 +19,13 @@ const About = () => (
 
 const style = {
   about: {
-    padding: '0 5vw'
+    paddingLeft: constants.paddingLeft,
+    paddingRight: constants.paddingRight
   },
   aboutImage: {
     margin: '0 auto',
-    width: '90vw',
-    height: '30vw',
+    width: `calc(100vw - ${constants.paddingLeft} - ${constants.paddingRight})`,
+    height: `calc((100vw - ${constants.paddingLeft} - ${constants.paddingRight}) / 3)`,
     backgroundImage: 'url(https://images.unsplash.com/photo-1490818387583-1baba5e638af?dpr=1&auto=format&fit=crop&w=1500&h=1190&q=80&cs=tinysrgb&crop=)',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
